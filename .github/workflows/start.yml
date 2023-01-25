@@ -1,0 +1,14 @@
+name: BUFF DATA WARP+
+on:
+  workflow_dispatch:
+    inputs:
+      User_Id:
+        description: 'User Warp+ ID:'
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Buff data warp+
+        run: INPUT_STORE=${{ github.event.inputs.User_Id }} python .github/workflows/change-directory.py
